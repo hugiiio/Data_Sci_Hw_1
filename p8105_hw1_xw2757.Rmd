@@ -44,7 +44,7 @@ as.numeric(random_samp_pos)
 as.numeric(factor_vec)
 as.numeric(char_vec)
 ```
-I can only convert the factor variable to numeric form. When I try to take the mean, factor variable and character variable would not compute because they are not numeric or logical. 
+I can only convert the factor variable to numeric form. When I try to take the mean, factor variable and character variable would not compute because they are not numeric or logical and the mean of character and factor varaibles are not meaningful. 
 
 
 

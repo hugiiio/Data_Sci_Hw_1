@@ -48,4 +48,47 @@ I can only convert the factor variable to numeric form. When I try to take the m
 
 
 
+##Problem 2
+
+**Use the code below to download the a package containing the penguins dataset:**
+```{r, eval=FALSE}
+install.packages("palmerpenguins")
+```
+
+**Next, use the following code (in your RMarkdown file) to load the penguins dataset:**
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
+**Write a short description of the penguins dataset (not the penguins_raw dataset) using inline R code, including:**
+**the data in this dataset, including names / values of important variables**
+**the size of the dataset (using nrow and ncol)**
+**the mean flipper length**
+
+ The size of the **penguins** dataset is `r nrow(penguins)` x `r ncol(penguins)`, with `r ncol(penguins)` variables and `r nrow(penguins)` observations.
+ 
+ Variables described in this dataset are as followed: `r names(penguins)`.
+ 
+```{r, echo=FALSE}
+clean_penguins <- tidyr::drop_na(penguins, flipper_length_mm) 
+```
+ 
+ The mean of the sample's flipper length, given available data, is `r mean(pull(clean_penguins, flipper_length_mm))`.
+
+**Make a scatterplot of flipper_length_mm (y) vs bill_length_mm (x); color points using the species variable (adding color = ... inside of aes in your ggplot code should help).**
+**Export your first scatterplot to your project directory using ggsave.**
+
+```{r}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = "red")) + geom_point()
+ggsave("flipper_length_X_bill_length_Scatter.pdf", height=6, width= 6)
+```
+
+
+
+
+
+
+
+
 
